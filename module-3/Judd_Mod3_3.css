@@ -1,0 +1,72 @@
+/*
+    Name: William Judd
+    Course: CSD340-300H Web Development with HTML and CSS
+    Assignment: Module 3.3
+    Date: August 23, 2026
+    Purpose: Style the Module 3.3 webpage lists, layout, and navigation.
+*/
+
+#container {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+#left {
+    width: 45%;
+    float: left;
+}
+
+#right {
+    width: 45%;
+    float: right;
+}
+
+#left h3 {
+    font-weight: 500;
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#right h3 {
+    font-weight: 500;
+    border: 1px dashed red;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#left ol {
+    font-weight: 300;
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 10px;
+    list-style-position: inside;
+}
+
+#right ol {
+    font-weight: 300;
+    border: 1px dashed red;
+    border-radius: 15px;
+    padding: 10px;
+    list-style-type: upper-roman;
+    list-style-position: inside;
+}
+
+#last {
+    width: 100%;
+    margin-top: 60%;
+    float: right;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
