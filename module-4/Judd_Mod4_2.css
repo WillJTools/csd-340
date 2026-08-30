@@ -1,0 +1,61 @@
+/*
+    William Judd
+    08/30/2026
+    Assignment 4.2
+    CSD 340 Web Development with HTML and CSS
+*/
+
+#container {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: rgba(30, 70, 140, 1);
+}
+
+#image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 10%;
+}
+
+#image-gallery > div {
+    border: 1px solid rgba(30, 70, 140, 0.5);
+    padding: 10px;
+}
+
+h3 {
+    text-align: center;
+    color: rgba(160, 50, 50, 1);
+}
+
+figure {
+    text-align: center;
+}
+
+figure img {
+    width: 200px;
+    height: 300px;
+    object-fit: contain;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.75em;
+    color: rgba(50, 110, 70, 1);
+}
+
+#last {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+#last a {
+    text-decoration: none;
+}
+
+#last a:hover {
+    text-decoration: underline;
+}
