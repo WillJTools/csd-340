@@ -1,0 +1,96 @@
+<!--
+    Name: William Judd
+    Date: September 27, 2026
+    Assignment: Module 9.3 - JavaScript Exercise, Part 1
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CSD 340 Module 9.3 assignment">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bellevue University, CSD 340">
+    <meta name="author" content="William Judd">
+
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <link rel="stylesheet" href="Judd_Mod9_3.css">
+
+    <script>
+        // Store the four words that will be revealed by the buttons.
+        var firstWord = "exercise";
+        var secondWord = "cybersecurity";
+        var thirdWord = "computers";
+        var fourthWord = "projects";
+    </script>
+</head>
+
+<body>
+    <div id="container">
+
+        <h1>Assignment 9.3: JavaScript - Part 1</h1>
+
+        <h2>Chapter 1: A Little About Me</h2>
+
+        <p class="intro">
+            One of my hobbies is staying active and exercising throughout the week.
+            I enjoy different types of workouts and like changing my routine from time
+            to time. <span class="sentence">One thing I enjoy about
+            <span id="exercise">________</span> is having a chance to step away from
+            everything else I have going on and focus on something different.</span>
+        </p>
+
+        <p>
+            I also enjoy technology and learning how different things work.
+            My interest in <span id="cybersecurity">________</span> is one of the
+            reasons I spend so much time learning about technology. I have always
+            been interested in <span id="computers">________</span>, and web
+            development gives me another opportunity to understand more about the
+            technology I interact with every day.
+        </p>
+
+        <p>
+            When I have free time, I enjoy relaxing, watching sports, and spending
+            time outside. I also like working on different
+            <span id="projects">________</span> and learning new skills whenever I
+            get the opportunity.
+        </p>
+
+        <p>
+            Click each button below to reveal one of the missing words.
+        </p>
+
+        <!-- Each button replaces the underscores in its matching span. -->
+        <button type="button"
+            onclick="document.getElementById('exercise').innerHTML = firstWord">
+            Reveal Exercise
+        </button>
+
+        <button type="button"
+            onclick="document.getElementById('cybersecurity').innerHTML = secondWord">
+            Reveal Cybersecurity
+        </button>
+
+        <button type="button"
+            onclick="document.getElementById('computers').innerHTML = thirdWord">
+            Reveal Computers
+        </button>
+
+        <button type="button"
+            onclick="document.getElementById('projects').innerHTML = fourthWord">
+            Reveal Projects
+        </button>
+
+        <hr>
+
+        <address>
+            <p><a href="https://www.bellevue.edu/">Bellevue University</a></p>
+            <p>1000 Galvin Road South</p>
+            <p>Bellevue, NE 68005</p>
+        </address>
+
+    </div>
+</body>
+
+</html>
