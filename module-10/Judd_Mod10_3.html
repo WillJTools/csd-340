@@ -1,0 +1,101 @@
+<!--
+    Name: William Judd
+    Date: October 4, 2026
+    Assignment: Module 10.3 - JavaScript Exercise, Part 2
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        h2 {
+            color: #0066cc;
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        #carImage {
+            width: 500px;
+            max-width: 90%;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #carSize {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #backLink {
+            margin-top: 50px;
+        }
+    </style>
+
+    <script>
+        let carSize = 500;
+
+        function shrinkCar() {
+
+            carSize -= 100;
+
+            if (carSize < 200) {
+                carSize = 500;
+            }
+
+            document.getElementById("carImage").style.width =
+                carSize + "px";
+
+            document.getElementById("carSize").textContent =
+                "Current Car Size: " + carSize + "px";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Assignment 10.3: JavaScript - Part 2</h1>
+
+    <h2>The Incredible Shrinking Car</h2>
+
+    <p>
+        Click the car to shrink it. Keep clicking to see what happens!
+    </p>
+
+    <img
+        id="carImage"
+        src="images/sedan.jpg"
+        alt="Blue BMW"
+        onclick="shrinkCar()"
+    >
+
+    <p id="carSize">Current Car Size: 500px</p>
+
+    <div id="backLink">
+        <a href="../index.html">Back to Landing Page</a>
+    </div>
+
+</body>
+
+</html>
