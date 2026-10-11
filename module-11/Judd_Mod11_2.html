@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<!--
+    Name: William Judd
+    Date: October 11, 2026
+    Assignment: CSD340 Module 11.2
+    JavaScript Exercise, Part 3
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <style>
+        body {
+            font-family: Georgia, serif;
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 0 20px;
+            color: #222;
+        }
+
+        h1 {
+            background-color: #003b71;
+            color: white;
+            padding: 12px;
+            border: 1px solid #d6a800;
+        }
+
+        h2 {
+            color: #003b71;
+            border-bottom: 1px solid #777;
+            padding-bottom: 8px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .task-form {
+            margin-top: 25px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 320px;
+            max-width: 90%;
+            font-size: 15px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin: 5px 5px 5px 0;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        #taskList {
+            line-height: 2;
+            padding-left: 35px;
+        }
+
+        #taskList li {
+            padding-left: 5px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid #777;
+            font-size: 14px;
+        }
+
+        a {
+            color: #003b71;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+    <h2>To Do List</h2>
+
+    <p>
+        Enter an item in the text box below and click Add to
+        include it in your To Do List. Use Delete Last Entry
+        to remove the final item in the list, or click Sort
+        to arrange the items in alphabetical order.
+    </p>
+
+    <div class="task-form">
+        <label for="taskInput">Enter a task:</label>
+        <br><br>
+
+        <input type="text" id="taskInput">
+
+        <button type="button" onclick="addTask()">Add</button>
+        <br>
+
+        <button type="button" onclick="deleteLastTask()">
+            Delete Last Entry
+        </button>
+
+        <button type="button" onclick="sortTasks()">
+            Sort
+        </button>
+    </div>
+
+    <h2>Things To Do</h2>
+
+    <ol id="taskList"></ol>
+
+    <p id="emptyMessage">
+        No items have been added yet.
+    </p>
+
+    <footer>
+        <p>
+            <a href="../index.html">Back to CSD340 Home Page</a>
+        </p>
+
+        <p>William Judd | CSD340 | Module 11.2</p>
+    </footer>
+
+    <script>
+        // Array used to store the To Do List items.
+        let tasks = [];
+
+        // Add a new item to the array.
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let newTask = input.value.trim();
+
+            if (newTask === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            tasks.push(newTask);
+
+            alert("Added: " + newTask);
+
+            input.value = "";
+
+            displayTasks();
+        }
+
+        // Remove the last item from the array.
+        function deleteLastTask() {
+            if (tasks.length === 0) {
+                alert("There are no items to delete.");
+                return;
+            }
+
+            let deletedTask = tasks.pop();
+
+            alert("Deleted: " + deletedTask);
+
+            displayTasks();
+        }
+
+        // Display the current items in the array.
+        function displayTasks() {
+            let list = document.getElementById("taskList");
+            let emptyMessage =
+                document.getElementById("emptyMessage");
+
+            list.innerHTML = "";
+
+            for (let i = 0; i < tasks.length; i++) {
+                let listItem = document.createElement("li");
+                listItem.textContent = tasks[i];
+                list.appendChild(listItem);
+            }
+
+            if (tasks.length === 0) {
+                emptyMessage.style.display = "block";
+            } else {
+                emptyMessage.style.display = "none";
+            }
+        }
+
+        // Sort the items alphabetically.
+        function sortTasks() {
+            tasks.sort();
+
+            alert("The To Do List has been sorted.");
+
+            displayTasks();
+        }
+
+        // Display the list when the page first loads.
+        displayTasks();
+    </script>
+
+</body>
+</html>
